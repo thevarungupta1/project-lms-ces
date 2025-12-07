@@ -3,7 +3,6 @@ import { WebinarRegistrationRepository } from './webinar-registration.repository
 import { IWebinarRegistration } from '../../models/WebinarRegistration.model';
 import { CreateWebinarRegistrationInput } from '../../schemas/webinarRegistration.schema';
 import { Webinar } from '../../models/Webinar.model';
-import { User } from '../../models/User.model';
 
 export class WebinarRegistrationService {
   private webinarRegistrationRepository: WebinarRegistrationRepository;

@@ -20,7 +20,7 @@ interface EnvConfig {
     rounds: number;
   };
   cors: {
-    origin: string;
+    origin: string | string[] | boolean;
     credentials: boolean;
   };
   rateLimit: {
@@ -63,7 +63,15 @@ export const env: EnvConfig = {
     rounds: parseInt(getEnvVar('BCRYPT_ROUNDS', '12'), 10),
   },
   cors: {
-    origin: getEnvVar('CORS_ORIGIN', 'http://localhost:8080'),
+    origin: (() => {
+      const origin = process.env.CORS_ORIGIN || '*';
+      // If CORS_ORIGIN is '*' or not set, allow all origins
+      if (origin === '*') {
+        return true; // Allow all origins
+      }
+      // Support multiple origins separated by comma
+      return origin.includes(',') ? origin.split(',').map(o => o.trim()) : origin;
+    })(),
     credentials: getEnvVar('CORS_CREDENTIALS', 'true') === 'true',
   },
   rateLimit: {

@@ -43,7 +43,7 @@ export class CertificateTemplateController {
     }
   };
 
-  getDefaultTemplate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  getDefaultTemplate = async (_req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const template = await this.certificateTemplateService.getDefaultTemplate();
       res.json(ResponseBuilder.success(template));

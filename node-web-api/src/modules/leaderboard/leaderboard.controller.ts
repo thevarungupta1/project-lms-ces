@@ -42,7 +42,7 @@ export class LeaderboardController {
     }
   };
 
-  updateRanks = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  updateRanks = async (_req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       await this.leaderboardService.updateRanks();
       res.json(ResponseBuilder.success(null, 'Ranks updated successfully'));

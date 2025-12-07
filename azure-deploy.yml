@@ -1,0 +1,59 @@
+# Azure Container Instances Deployment Configuration
+# Use this with: az deployment group create --template-file azure-deploy.yml
+
+apiVersion: 2019-12-01
+location: eastus
+name: ces-lms-deployment
+properties:
+  containers:
+    # Backend Container
+    - name: backend
+      properties:
+        image: your-registry.azurecr.io/ces-lms-backend:latest
+        resources:
+          requests:
+            cpu: 1
+            memoryInGb: 1.5
+        ports:
+          - port: 3000
+            protocol: TCP
+        environmentVariables:
+          - name: NODE_ENV
+            value: production
+          - name: PORT
+            value: "3000"
+          - name: API_VERSION
+            value: v1
+          - name: MONGODB_URI
+            secureValue: "your-mongodb-connection-string"
+          - name: MONGODB_DB_NAME
+            value: ces-lms
+          - name: JWT_SECRET
+            secureValue: "your-jwt-secret"
+          - name: JWT_EXPIRES_IN
+            value: "7d"
+          - name: JWT_REFRESH_SECRET
+            secureValue: "your-refresh-secret"
+          - name: JWT_REFRESH_EXPIRES_IN
+            value: "30d"
+          - name: CORS_ORIGIN
+            value: "https://your-frontend-url.azurestaticapps.net"
+          - name: CORS_CREDENTIALS
+            value: "true"
+          - name: BCRYPT_ROUNDS
+            value: "12"
+          - name: LOG_LEVEL
+            value: info
+        registryCredentials:
+          server: your-registry.azurecr.io
+          username: your-registry-username
+          password: your-registry-password
+  osType: Linux
+  ipAddress:
+    type: Public
+    ports:
+      - protocol: TCP
+        port: 3000
+    dnsNameLabel: ces-lms-backend
+  restartPolicy: Always
+

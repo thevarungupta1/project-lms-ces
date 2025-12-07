@@ -87,12 +87,12 @@ export class AuthService {
     };
 
     const accessToken = jwt.sign(payload, env.jwt.secret, {
-      expiresIn: env.jwt.expiresIn,
-    });
+      expiresIn: env.jwt.expiresIn as string,
+    } as jwt.SignOptions);
 
     const refreshToken = jwt.sign(payload, env.jwt.refreshSecret, {
-      expiresIn: env.jwt.refreshExpiresIn,
-    });
+      expiresIn: env.jwt.refreshExpiresIn as string,
+    } as jwt.SignOptions);
 
     return { accessToken, refreshToken };
   }

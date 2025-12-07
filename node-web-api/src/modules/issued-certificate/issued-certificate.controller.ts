@@ -1,8 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { IssuedCertificateService } from './issued-certificate.service';
 import { ResponseBuilder } from '../../core/http/ApiResponse';
-import { validate } from '../../core/middleware/validation';
-import { getCertificateByNumberSchema } from '../../schemas/issuedCertificate.schema';
 
 export class IssuedCertificateController {
   private issuedCertificateService: IssuedCertificateService;

@@ -48,7 +48,7 @@ export class AnnouncementController {
     }
   };
 
-  getActiveAnnouncements = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  getActiveAnnouncements = async (_req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const announcements = await this.announcementService.getActiveAnnouncements();
       res.json(ResponseBuilder.success(announcements));

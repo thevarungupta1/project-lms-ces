@@ -3,7 +3,6 @@ import { CourseReviewRepository } from './course-review.repository';
 import { ICourseReview } from '../../models/CourseReview.model';
 import { CreateCourseReviewInput, UpdateCourseReviewInput } from '../../schemas/courseReview.schema';
 import { Course } from '../../models/Course.model';
-import { User } from '../../models/User.model';
 
 export class CourseReviewService {
   private courseReviewRepository: CourseReviewRepository;

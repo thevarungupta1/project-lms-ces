@@ -3,7 +3,6 @@ import { QuizRepository } from './quiz.repository';
 import { IQuiz } from '../../models/Quiz.model';
 import { CreateQuizInput, UpdateQuizInput } from '../../schemas/quiz.schema';
 import { Course } from '../../models/Course.model';
-import { User } from '../../models/User.model';
 
 export class QuizService {
   private quizRepository: QuizRepository;

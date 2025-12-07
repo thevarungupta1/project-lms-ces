@@ -14,12 +14,15 @@ export const createExpressApp = (): Application => {
 
   // Security middleware
   app.use(helmet());
-  app.use(
-    cors({
-      origin: env.cors.origin,
-      credentials: env.cors.credentials,
-    })
-  );
+  
+  // CORS configuration - supports all origins, single origin, or multiple origins
+  const corsOptions: cors.CorsOptions = {
+    origin: env.cors.origin, // true = allow all, string = single origin, string[] = multiple origins
+    credentials: env.cors.credentials,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  };
+  app.use(cors(corsOptions));
 
   // Rate limiting
   const limiter = rateLimit({
@@ -48,7 +51,7 @@ export const createExpressApp = (): Application => {
   }
 
   // Health check
-  app.get('/health', (req, res) => {
+  app.get('/health', (_req, res) => {
     res.json({
       status: 'ok',
       timestamp: new Date().toISOString(),

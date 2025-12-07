@@ -45,7 +45,7 @@ export class WebinarController {
     }
   };
 
-  getUpcomingWebinars = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  getUpcomingWebinars = async (_req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const webinars = await this.webinarService.getUpcomingWebinars();
       res.json(ResponseBuilder.success(webinars));

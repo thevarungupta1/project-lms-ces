@@ -3,7 +3,7 @@ import { ApiError } from '../http/ApiError';
 
 export const notFoundHandler = (
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ): void => {
   const error = ApiError.notFound(`Route ${req.originalUrl} not found`);

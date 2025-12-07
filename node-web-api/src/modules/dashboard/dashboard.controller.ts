@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { DashboardService } from './dashboard.service';
 import { ResponseBuilder } from '../../core/http/ApiResponse';
 import { AuthRequest } from '../../core/middleware/auth';

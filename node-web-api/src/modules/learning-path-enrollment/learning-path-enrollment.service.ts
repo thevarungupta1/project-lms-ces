@@ -3,7 +3,6 @@ import { LearningPathEnrollmentRepository } from './learning-path-enrollment.rep
 import { ILearningPathEnrollment } from '../../models/LearningPathEnrollment.model';
 import { CreateLearningPathEnrollmentInput } from '../../schemas/learningPathEnrollment.schema';
 import { LearningPath } from '../../models/LearningPath.model';
-import { User } from '../../models/User.model';
 import { LearningPathStep } from '../../models/LearningPathStep.model';
 
 export class LearningPathEnrollmentService {

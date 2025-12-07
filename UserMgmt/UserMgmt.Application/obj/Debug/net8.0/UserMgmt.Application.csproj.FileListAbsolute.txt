@@ -1,0 +1,16 @@
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\bin\Debug\net8.0\UserMgmt.Application.deps.json
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\bin\Debug\net8.0\UserMgmt.Application.dll
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\bin\Debug\net8.0\UserMgmt.Application.pdb
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\bin\Debug\net8.0\UserMgmt.Domain.dll
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\bin\Debug\net8.0\UserMgmt.Domain.pdb
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.csproj.AssemblyReference.cache
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.AssemblyInfoInputs.cache
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.AssemblyInfo.cs
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.csproj.CoreCompileInputs.cache
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.sourcelink.json
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.C693E7A7.Up2Date
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.dll
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\refint\UserMgmt.Application.dll
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\UserMgmt.Application.pdb
+F:\01Projects\project-ces\UserMgmt\UserMgmt.Application\obj\Debug\net8.0\ref\UserMgmt.Application.dll

@@ -1,0 +1,30 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace UserMgmt.Application.DTOs;
+
+/// <summary>
+/// DTO for user registration
+/// </summary>
+public class RegisterDto
+{
+    [Required]
+    [MinLength(2)]
+    [MaxLength(100)]
+    public string Name { get; set; } = string.Empty;
+
+    [Required]
+    [EmailAddress]
+    [MaxLength(200)]
+    public string Email { get; set; } = string.Empty;
+
+    [Required]
+    [MinLength(6)]
+    [MaxLength(100)]
+    public string Password { get; set; } = string.Empty;
+
+    [MaxLength(100)]
+    public string? Department { get; set; }
+
+    public Domain.Enums.UserRole Role { get; set; } = Domain.Enums.UserRole.Learner;
+}
+
