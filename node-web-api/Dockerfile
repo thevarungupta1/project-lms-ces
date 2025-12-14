@@ -5,11 +5,13 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 COPY tsconfig.json ./
 
 # Install dependencies
-RUN npm ci
+# Using npm install instead of npm ci for better compatibility when package-lock.json is missing
+RUN npm install && \
+    npm cache clean --force
 
 # Copy source code
 COPY src ./src
@@ -34,10 +36,11 @@ RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
 
 # Copy package files
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
 # Install production dependencies only
-RUN npm ci --only=production && \
+# Using npm install instead of npm ci for better compatibility
+RUN npm install --omit=dev && \
     npm cache clean --force
 
 # Copy built application from builder
