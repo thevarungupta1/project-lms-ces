@@ -14,7 +14,10 @@ RUN npm ci
 # Copy source code
 COPY src ./src
 
-# Copy data folder for seed scripts
+# Copy data folder for seed scripts (create directory first, then copy if exists)
+RUN mkdir -p ./data
+# Copy data folder - will fail if doesn't exist, so we handle it in build script
+# For now, copy everything and let build context handle it
 COPY data ./data
 
 # Build the application
