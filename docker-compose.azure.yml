@@ -1,0 +1,31 @@
+# ============================================
+# Azure-Specific Docker Compose Configuration
+# ============================================
+# This file extends docker-compose.yml with Azure-specific settings
+# Usage: docker compose -f docker-compose.yml -f docker-compose.azure.yml up -d
+
+services:
+  backend:
+    environment:
+      # Azure-specific CORS configuration
+      # Replace with your actual Azure frontend URL
+      CORS_ORIGIN: ${AZURE_FRONTEND_URL:-*}
+      
+      # Azure-specific logging
+      LOG_LEVEL: ${AZURE_LOG_LEVEL:-info}
+    
+    # Azure-specific health check with longer timeout
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 15s
+      start_period: 60s
+      retries: 5
+
+  frontend:
+    build:
+      args:
+        # Azure-specific API URL
+        # Replace with your actual backend URL (IP or domain)
+        VITE_API_BASE_URL: ${AZURE_BACKEND_URL:-http://localhost:3000}
+
